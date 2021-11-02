@@ -1,17 +1,9 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+*{
+  font-family: 'Space Mono', monospace;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   background-color: #282c34;
@@ -24,15 +16,158 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container{
+  background-color: hsl(185, 41%, 84%);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.App{
+  color: hsl(183, 100%, 15%);
+}
+html, body, #root, #root>div{
+  height: 100%;
+  margin: 0;
+}
+.title{
+  color: hsl(183, 100%, 15%);
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: 1fr 1fr;
+  column-gap: 10%;
+}
+.calculator{
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+.input{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.bill{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  height: 20%;
+}
+.amount-container{
+  height: 40%;
+  width: 100%;
+  display: flex;
+  background-color: hsl(189, 41%, 97%);
+  border-radius: 0.5em;
+  position: relative;
+  overflow: hidden;
+}
+.dollar{
+  position: absolute;
+  height: 50%;
+  align-self: center;
+  left: 1em;
+}
+.text{
+  text-align: start;
+  display: flex;
+  align-items: center;
+  height: 20%;
+}
+.amount{
+  height: 100%;
+  text-align: end;
+  font-size: 24px;
+  background-color: hsl(189, 41%, 97%);
+  color: hsl(183, 100%, 15%);
+  border: 0px none;
+  border-radius: 5px;
+  position: absolute;
+  right: 5%;
+  outline: none;
+  
+}
+.tip{
+  display: flex;
+  flex-direction: column;
+  height: 40%;
+}
+.tip-container{
+  display: grid;
+  gap: 5%;
+  column-gap: 4%;
+  row-gap: 8%;
+  height: 80%;
+}
+.tip-container button {
+  border: none;
+  background-color: hsl(183, 100%, 15%);;
+  color: white;
+  border-radius: 5px;
+  font-size: 2em;
+}
+.custom-tip{
+  background-color: hsl(189, 41%, 97%);
+  font-size: 2em;
+  text-align: center;
+  color: hsl(184, 14%, 56%);
+  border-radius: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 767px){
+  .App{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
   }
-  to {
-    transform: rotate(360deg);
+  .container{
+    align-content: center;
+    
   }
+  .title-container{
+    align-self: center;
+    display: flex;
+    height: 15.4%;
+    align-items: center;
+  }
+  .title{
+    width: 33%;
+    
+  }
+  .title *{
+    font-size: 2.5rem;
+  }
+  .input{
+    height: 60%;
+   
+  }
+  .output{
+    height: 40%;
+    
+    display: grid;
+  }
+}
+  .calculator{
+    height: 84.6%;
+    bottom: 0px;
+    border-radius: 25px 25px 0 0;
+    /* 
+     */
+  }
+  .bill{
+    top:5%;
+  }
+  .tip-container{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+@media screen and (min-width: 768px){
+  
+  html, body, #root, #root>div{
+    height: 100%;
+    margin: 0;
+  }
+  
 }

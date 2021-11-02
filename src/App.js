@@ -1,23 +1,43 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import { Bill } from './components/bill';
+import { Tip } from './components/tip';
 
 function App() {
+  const title = 'SPLITTER';
+  let counter = 0;
+  const [ values, setValues] = useState({
+    bill: 0,
+    tip: 0,
+    persons: 0,
+    tipAmount: 0,
+    total: 0,
+  })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className = "App" >
+      <div className = "container" >
+        <span className = "title-container">
+          <span className = "title" >
+            {title.split('').map(letter => {
+              counter++;
+              return(
+                <span key={counter} className={`title-${counter}`}>
+                  {letter}
+                </span> 
+              )
+            })}
+          </span>
+        </span>
+        <span className = "calculator">
+          <span className = "input">
+              <Bill/>
+              <Tip/>
+          </span>
+          <span className = "output">
+          </span>
+        </span>
+      </div>
     </div>
   );
 }
