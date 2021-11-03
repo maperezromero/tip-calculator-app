@@ -21,10 +21,7 @@ export const Tip = () => {
                 <button className = "tip-button" id = "tip-50">
                     50%
                 </button>
-                <span className = "custom-tip">
-                    Custom
-                </span>
-
+                <input type="text" className = "custom-tip" defaultValue="Custom"/>
             </span>
         </span>
     );

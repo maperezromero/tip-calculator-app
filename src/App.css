@@ -4,7 +4,6 @@
   font-family: 'Space Mono', monospace;
 }
 
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -35,6 +34,7 @@ html, body, #root, #root>div{
   grid-template-columns: repeat(4,1fr);
   grid-template-rows: 1fr 1fr;
   column-gap: 10%;
+  font-weight: 500;
 }
 .calculator{
   background-color: white;
@@ -52,7 +52,7 @@ html, body, #root, #root>div{
   position: relative;
   flex-direction: column;
   width: 100%;
-  height: 20%;
+  height: 30%;
 }
 .amount-container{
   height: 40%;
@@ -74,6 +74,8 @@ html, body, #root, #root>div{
   display: flex;
   align-items: center;
   height: 20%;
+  font-weight: 600;
+  color: hsl(184, 14%, 45%);
 }
 .amount{
   height: 100%;
@@ -113,6 +115,41 @@ html, body, #root, #root>div{
   text-align: center;
   color: hsl(184, 14%, 56%);
   border-radius: 5px;
+  border: none;
+  width: 100%;
+}
+
+.persons{
+  display: flex;
+  flex-direction: column;
+  height: 30%;
+}
+.people-container{
+  height: 40%;
+  width: 100%;
+  display: flex;
+  background-color: hsl(189, 41%, 97%);
+  border-radius: 0.5em;
+  position: relative;
+  overflow: hidden;
+}
+.number-people{
+  height: 100%;
+  text-align: end;
+  font-size: 24px;
+  background-color: hsl(189, 41%, 97%);
+  color: hsl(183, 100%, 15%);
+  border: 0px none;
+  border-radius: 5px;
+  position: absolute;
+  right: 5%;
+  outline: none;
+}
+.person{
+  position: absolute;
+  height: 50%;
+  align-self: center;
+  left: 1em;
 }
 
 @media screen and (max-width: 767px){

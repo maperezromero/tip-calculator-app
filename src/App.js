@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import './App.css';
 import { Bill } from './components/bill';
+import { Persons } from './components/persons';
 import { Tip } from './components/tip';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <span className = "input">
               <Bill/>
               <Tip/>
+              <Persons/>
           </span>
           <span className = "output">
           </span>
