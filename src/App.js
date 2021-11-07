@@ -1,17 +1,21 @@
 // import logo from './logo.svg';
-import { useState } from 'react';
+import { createContext, useState } from 'react';
 import './App.css';
 import { Bill } from './components/bill';
 import { Persons } from './components/persons';
 import { Tip } from './components/tip';
+import { TipAmount } from './components/tip-amount';
+import { TotalAmount } from './components/total-amount';
+
+export const valuesContext = createContext(null);
 
 function App() {
   const title = 'SPLITTER';
   let counter = 0;
   const [ values, setValues] = useState({
     bill: 0,
-    tip: 0,
-    persons: 0,
+    tip: 'Custom',
+    persons: 1,
     tipAmount: 0,
     total: 0,
   })
@@ -30,15 +34,23 @@ function App() {
             })}
           </span>
         </span>
-        <span className = "calculator">
-          <span className = "input">
-              <Bill/>
-              <Tip/>
-              <Persons/>
+        <valuesContext.Provider value = {{values, setValues}}>
+          <span className = "calculator">
+            <span className = "input">
+                <Bill/>
+                <Tip/>
+                <Persons/>
+            </span>
+            <span className = "output">
+                <TipAmount/>
+                <TotalAmount/>
+                <button className = "reset">
+                  RESET
+                </button>
+            </span>
           </span>
-          <span className = "output">
-          </span>
-        </span>
+        </valuesContext.Provider>
+
       </div>
     </div>
   );

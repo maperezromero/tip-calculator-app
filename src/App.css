@@ -3,7 +3,6 @@
 *{
   font-family: 'Space Mono', monospace;
 }
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -152,6 +151,50 @@ html, body, #root, #root>div{
   left: 1em;
 }
 
+.output{
+  background-color: hsl(183, 100%, 15%);
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.title-output{
+  color: white;
+  font-size: 1.5em;
+}
+.text-person{
+  color: hsl(189, 41%, 70%);
+}
+.amount-output{
+  color: hsl(172, 67%, 45%);
+  height: 100%;
+  text-align: end;
+  font-size: 30px;
+  border: 0px none;
+  border-radius: 5px;
+  position: absolute;
+  right: 5%;
+  outline: none;
+}
+.reset{
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  font-size: 2em;
+  border: none;
+  border-radius: 5px;
+  height: 20%;
+  width: 90%;
+  position: absolute;
+  bottom: 10%;
+}
+.dollar-output{
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(172, 67%, 45%);;
+  height: 10%
+}
 @media screen and (max-width: 767px){
   .App{
     display: flex;
@@ -159,6 +202,8 @@ html, body, #root, #root>div{
     gap:15px;
   }
   .container{
+    display: flex;
+    flex-direction: column;
     align-content: center;
     
   }
@@ -180,17 +225,17 @@ html, body, #root, #root>div{
    
   }
   .output{
-    height: 40%;
-    
-    display: grid;
+    height: 30%;
+    border-radius: 15px;
   }
 }
   .calculator{
     height: 84.6%;
     bottom: 0px;
     border-radius: 25px 25px 0 0;
-    /* 
-     */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
   .bill{
     top:5%;
@@ -198,6 +243,13 @@ html, body, #root, #root>div{
   .tip-container{
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+  }
+  .tip-amount, .total-amount{
+    height: 25%;
+    width: 90%;
+    display: flex;
+    overflow: hidden;
+    
   }
 
 @media screen and (min-width: 768px){
