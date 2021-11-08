@@ -195,6 +195,10 @@ html, body, #root, #root>div{
   color: hsl(172, 67%, 45%);;
   height: 10%
 }
+.selected{
+  background-color: hsl(172, 67%, 45%) !important;
+  color: hsl(183, 100%, 15%) !important;
+}
 @media screen and (max-width: 767px){
   .App{
     display: flex;
@@ -258,5 +262,92 @@ html, body, #root, #root>div{
     height: 100%;
     margin: 0;
   }
-  
+  .container{
+    justify-items: center;
+    align-items: center;
+    position: relative;
+  }
+  .calculator{
+    height: min(47vh, 30vw);
+    aspect-ratio: 1.9;
+    flex-direction: row;
+    position: absolute;
+    border-radius: 15px;
+    top: 30%;
+    justify-content: space-around;
+  }
+  .title-container{
+    position: absolute;
+    top: 15%;
+  }
+  .output, .input{
+    height: 80%;
+    border-radius: 8px;
+    width: 43%;
+    position: relative;
+  }
+  .input{
+    justify-content: space-between;
+  }
+  .bill{
+    height: 15%;
+    position: absolute;
+  }
+  .bill .text{
+    height: 28%;
+  }
+  .bill .amount-container{
+    height: 72%;
+  }
+  .tip{
+    position: absolute;
+    top: 23%;
+  }
+  .tip-button, .custom-tip, .text, .number-people, .amount, .title-output  {
+    font-size: min(1.6vw, 2.2vh) !important;
+  }
+  .text-person{
+    font-size: min(1.2vw, 1.8vh) !important;
+  }
+  .title *{
+    font-size: min(3vw, 4vh) !important;
+  }
+  .amount-output{
+    font-size: min(4vw, 5vh) !important;
+  }
+  .reset{
+    font-size: min(2vw, 2.5vh) !important;
+  }
+  .tip-amount{
+    height: 15%;
+    position: absolute;
+    top: 8%
+  }
+  .total-amount{
+    height: 15%;
+    position: absolute;
+    top: 30%
+  }
+  .persons{
+    position: absolute;
+    height: 15%;
+    width: 100%;
+    bottom: 5%;
+  }
+  .persons .text{
+    height: 28%;
+  }
+  .persons .people-container{
+    height: 72%;
+  }
+  .tip-container{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .amount-container{
+    height: 80%;
+  }
+  .text{
+    
+  }
 }

@@ -15,7 +15,7 @@ export const TipAmount = () =>{
                 </span>
             </span>
             <span className = "amount-output">
-                {values.tipAmount}
+                ${values.tipAmount}
             </span>
         </span>
     )

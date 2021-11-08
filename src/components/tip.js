@@ -1,21 +1,22 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { valuesContext } from "../App";
 import { calculation } from "../helpers/calculation";
 
 export const Tip = () => {
     const { values, setValues } = useContext(valuesContext)
-    let selected;
+    const   [ selected, setSelected] = useState(0);
+    
     const handleInput = (e) => {
+        console.log(e.target.value);
         setValues({...calculation({...values, tip: Number(e.target.value)})})
     }
     const resetInput = () => {
         setValues({...values, tip: ''})
     }
     const handleClick = (e) => {
-        console.log(e);
-        console.log(e.target.id.indexOf('-'));
-        selected = e.target.id.substring(e.target.id.indexOf('-'),2);
-        console.log(selected);
+        setSelected(Number(e.target.id.substring(e.target.id.length - (e.target.id.length - (e.target.id.indexOf('-')+1)))));
+        setValues({...values, tip: 'Custom'})
+        setValues({...calculation({...values, tip: selected})})
     }
     return (
         <span className = "tip">
@@ -23,19 +24,19 @@ export const Tip = () => {
                 Select Tip %
             </span>
             <span className = "tip-container">
-                <button className = {`tip-button ${selected === 5? 'selected': null}`} id = "tip-5" onClick={handleClick}>
+                <button className = {`tip-button ${selected === 5? 'selected': ''}`} id = "tip-5" onClick={handleClick}>
                     5%
                 </button>
-                <button className = "tip-button" id = "tip-10">
+                <button className = {`tip-button ${selected === 10? 'selected': ''}`} id = "tip-10" onClick={handleClick}>
                     10%
                 </button>
-                <button className = "tip-button" id = "tip-15">
+                <button className = {`tip-button ${selected === 15? 'selected': ''}`} id = "tip-15" onClick={handleClick}>
                     15%
                 </button>
-                <button className = "tip-button" id = "tip-25">
+                <button className = {`tip-button ${selected === 25? 'selected': ''}`} id = "tip-25" onClick={handleClick}>
                     25%
                 </button>
-                <button className = "tip-button" id = "tip-50">
+                <button className = {`tip-button ${selected === 50? 'selected': ''}`} id = "tip-50" onClick={handleClick}>
                     50%
                 </button>
                 <input type="text" className = "custom-tip"  value={values.tip} onClick={()=> resetInput()} onChange = {handleInput}/>

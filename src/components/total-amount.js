@@ -15,7 +15,7 @@ export const TotalAmount = () =>{
                 </span>
             </span>
             <span className = "amount-output">
-                {values.total}
+                ${values.total}
             </span>
         </span>
     )

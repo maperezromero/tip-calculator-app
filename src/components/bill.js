@@ -6,8 +6,8 @@ export const Bill = () => {
     const { values, setValues } = useContext(valuesContext)
     
     const handleInput = (e) => {
-
-        setValues({...calculation({...values, bill: Number(e.target.value)})})
+        console.log(e.target.value);
+        setValues({...calculation({...values, bill: e.target.value})})
 
     }
     const resetInput = () => {
