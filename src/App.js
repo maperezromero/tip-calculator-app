@@ -19,6 +19,15 @@ function App() {
     tipAmount: 0,
     total: 0,
   })
+  const reset = () =>{
+    setValues({
+      bill: 0,
+      tip: 'Custom',
+      persons: 1,
+      tipAmount: 0,
+      total: 0,
+    })
+  }
   return (
     <div className = "App" >
       <div className = "container" >
@@ -44,7 +53,7 @@ function App() {
             <span className = "output">
                 <TipAmount/>
                 <TotalAmount/>
-                <button className = "reset">
+                <button className = "reset" onClick={reset}>
                   RESET
                 </button>
             </span>

@@ -14,9 +14,10 @@ export const Tip = () => {
         setValues({...values, tip: ''})
     }
     const handleClick = (e) => {
-        setSelected(Number(e.target.id.substring(e.target.id.length - (e.target.id.length - (e.target.id.indexOf('-')+1)))));
+        const value = Number(e.target.id.substring(e.target.id.length - (e.target.id.length - (e.target.id.indexOf('-')+1)))); 
+        setSelected(value);
         setValues({...values, tip: 'Custom'})
-        setValues({...calculation({...values, tip: selected})})
+        setValues({...calculation({...values, tip: value})})
     }
     return (
         <span className = "tip">

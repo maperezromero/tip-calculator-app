@@ -118,11 +118,11 @@ html, body, #root, #root>div{
   width: 100%;
 }
 
-.persons{
+/* .persons{
   display: flex;
   flex-direction: column;
   height: 30%;
-}
+} */
 .people-container{
   height: 40%;
   width: 100%;
@@ -189,6 +189,8 @@ html, body, #root, #root>div{
   width: 90%;
   position: absolute;
   bottom: 10%;
+  display: inline-block;
+  line-height: 15px;
 }
 .dollar-output{
   background-color: hsl(183, 100%, 15%);
@@ -226,11 +228,21 @@ html, body, #root, #root>div{
   }
   .input{
     height: 60%;
-   
+    position: relative;
   }
   .output{
     height: 30%;
     border-radius: 15px;
+    position: relative;
+  }
+  .title-output{
+    font-size: 4vmin;
+  }
+  .amount-output{
+    font-size: 6vmin;
+  }
+  .text-person{
+    font-size: 3vmin;
   }
 }
   .calculator{
@@ -242,19 +254,42 @@ html, body, #root, #root>div{
     flex-direction: column;
   }
   .bill{
-    top:5%;
+    position: absolute;
+    top:2%;
+    height: 20%;
+  }
+  .tip{
+    height: 50%;
+    position: absolute;
+    top: 18%
+  }
+  .persons{
+    height: 20%;
+    width: 100%;
+    position: absolute;
+    bottom: 5%;
   }
   .tip-container{
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+  }
+  .tip-container button {
+    font-size: 5vmin;
   }
   .tip-amount, .total-amount{
     height: 25%;
     width: 90%;
     display: flex;
     overflow: hidden;
-    
+    position: absolute;
   }
+  .tip-amount{
+    top: 10%;
+  }
+  .total-amount{
+    top:38%;
+  }
+
 
 @media screen and (min-width: 768px){
   
@@ -290,7 +325,7 @@ html, body, #root, #root>div{
     justify-content: space-between;
   }
   .bill{
-    height: 15%;
+    height: 20%;
     position: absolute;
   }
   .bill .text{
@@ -301,19 +336,22 @@ html, body, #root, #root>div{
   }
   .tip{
     position: absolute;
-    top: 23%;
+    top: 28%;
   }
-  .tip-button, .custom-tip, .text, .number-people, .amount, .title-output  {
+  .tip-button, .custom-tip, .number-people, .amount, .title-output  {
     font-size: min(1.6vw, 2.2vh) !important;
+    font-weight: bold;
   }
+
   .text-person{
-    font-size: min(1.2vw, 1.8vh) !important;
+    font-size: 1vmin !important;
   }
   .title *{
     font-size: min(3vw, 4vh) !important;
   }
   .amount-output{
-    font-size: min(4vw, 5vh) !important;
+    font-size: 3vmin !important;
+    font-weight: 600;
   }
   .reset{
     font-size: min(2vw, 2.5vh) !important;
@@ -330,9 +368,9 @@ html, body, #root, #root>div{
   }
   .persons{
     position: absolute;
-    height: 15%;
+    height: 20%;
     width: 100%;
-    bottom: 5%;
+    bottom: 0% !important;
   }
   .persons .text{
     height: 28%;
@@ -340,6 +378,7 @@ html, body, #root, #root>div{
   .persons .people-container{
     height: 72%;
   }
+  
   .tip-container{
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -347,7 +386,5 @@ html, body, #root, #root>div{
   .amount-container{
     height: 80%;
   }
-  .text{
-    
-  }
+
 }
