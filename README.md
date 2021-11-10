@@ -37,7 +37,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [https://relaxed-brown-4abc40.netlify.app/](https://your-live-site-url.com)
+- Live Site URL: [https://relaxed-brown-4abc40.netlify.app/](https://relaxed-brown-4abc40.netlify.app/)
 
 ## My process
 
