@@ -9,7 +9,6 @@ export const Persons = () => {
     const { values, setValues } = useContext(valuesContext)
     const handleInput = (e) =>{
         setValues({...calculation({...values, persons: Number(e.target.value)})})
-
     }
 
     const resetInput = () => {
